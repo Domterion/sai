@@ -4,13 +4,17 @@ Sai, a public Zoom meeting database.
 
 ## Installation
 
+### Requirements
+You must have any recent version of Crystal lang
+A MongoDB instance with a database and collection named `Sai`
+libmongoc-dev libmongoc-1.0-0 libmongoclient-dev for [kimvex/mongodb-crystal](https://github.com/kimvex/mongodb-crystal)
++ If on Ubuntu `$ sudo apt install libmongoc-dev libmongoc-1.0-0 libmongoclient-dev`
+
+
 ```
 $ git clone https://github.com/Domterion/sai.git
 $ cd sai
 $ shards install 
-
-# These are needed for kimvex/mongodb-crystal
-$ sudo apt install libmongoc-dev libmongoc-1.0-0 libmongoclient-dev
 ```
 
 You will have to edit the `config.cr.example`, change the mongo uri to your instance with a collection and db called `sai`. Change the name to `config.cr` 

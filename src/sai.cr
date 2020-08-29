@@ -77,5 +77,5 @@ module Sai
     {msg: "OK"}.to_json
   end
 
-  Kemal.run
+  Kemal.run port: Sai::Config.port
 end
