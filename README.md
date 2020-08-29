@@ -4,11 +4,20 @@ Sai, a public Zoom meeting database.
 
 ## Installation
 
-TODO: Write installation instructions here
+```
+$ git clone https://github.com/Domterion/sai.git
+$ cd sai
+$ shards install 
 
-## Usage
+# These are needed for kimvex/mongodb-crystal
+$ sudo apt install libmongoc-dev libmongoc-1.0-0 libmongoclient-dev
+```
 
-TODO: Write usage instructions here
+You will have to edit the `config.cr.example`, change the mongo uri to your instance with a collection and db called `sai`. Change the name to `config.cr` 
+
+```
+$ shards build && ./bin/sai
+```
 
 ## Development
 
