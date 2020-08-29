@@ -1,0 +1,34 @@
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="display-3">Sai</h1>
+                <span class="lead">A public Zoom meeting database</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<%- if DATABASE.meetings.empty? %>
+<div class="container text-center">
+    <p>Uh oh~ no meetings found..</p>
+</div>
+<%- end -%>
+
+<div class="container-fluid meetings">
+    <div class="row justify-content-center">
+        <%- DATABASE.meetings.each do |i, v| -%>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">
+                    <strong>Id:</strong> <span id="id"> <%= v.id %> </span>
+                    <hr><strong>Passcode:</strong> <span id="passcode">
+                        <%= v.passcode ? v.passcode : "No passcode" %></span>
+                    <hr><strong>Notes:</strong>
+                    <span id="notes"><%= v.notes ? v.notes : "No notes" %></span>
+                </p>
+            </div>
+        </div>
+        <%- end -%>
+    </div>
+</div>

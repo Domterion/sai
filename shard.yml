@@ -1,0 +1,23 @@
+name: sai
+version: 0.1.0
+
+authors:
+  - Domterion <nobody@nobody.com>
+
+targets:
+  sai:
+    main: src/sai.cr
+
+crystal: 0.35.1
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    branch: master
+  spec-kemal:
+    github: kemalcr/spec-kemal
+  mongo:
+    github: kimvex/mongodb-crystal
+    branch: master
+
+license: MIT

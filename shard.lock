@@ -1,0 +1,26 @@
+version: 2.0
+shards:
+  exception_page:
+    git: https://github.com/crystal-loot/exception_page.git
+    version: 0.1.4
+
+  kemal:
+    git: https://github.com/kemalcr/kemal.git
+    version: 0.26.1+git.commit.a819d4792bbc63d993d6dd2b15f9af5efb0c2d8c
+
+  kilt:
+    git: https://github.com/jeromegn/kilt.git
+    version: 0.4.0
+
+  mongo:
+    git: https://github.com/kimvex/mongodb-crystal.git
+    version: 0.3.0+git.commit.7914bf400555483dfebeca13ff59920b8683461e
+
+  radix:
+    git: https://github.com/luislavena/radix.git
+    version: 0.3.9
+
+  spec-kemal:
+    git: https://github.com/kemalcr/spec-kemal.git
+    version: 0.5.0
+

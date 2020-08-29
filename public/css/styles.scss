@@ -1,0 +1,87 @@
+$main: #1b1b1b;
+$accent: #353535;
+$text: white;
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    background-color: $main;
+    color: $text;
+
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+nav {
+    background-color: $accent;
+
+    .navbar-brand {
+        font-weight: bolder;
+    }
+
+    a {
+        text-decoration: none;
+        color: $text;
+
+        &:hover,
+        &:active,
+        &:visited {
+            color: $text;
+            background-color: $main;
+            border-radius: 4px;
+        }
+    }
+}
+
+.masthead {
+    font-weight: bolder;
+
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    span {
+        background-color: $accent;
+        border-radius: 4px;
+    }
+}
+
+.meetings {
+    margin-bottom: 5px;
+
+    .card {
+        background-color: $accent;
+
+        margin-bottom: 4px;
+        margin-right: 4px;
+
+        .card-body {
+            padding: 14px;
+        }
+
+        p {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+
+        #id {
+            font-weight: bolder;
+            color: #5FB641;
+        }
+
+        #passcode {
+            font-weight: bolder;
+            color: #FFB605;
+        }
+
+        #notes {
+            font-weight: bolder;
+            color: #FB8501;
+        }
+    }
+}
