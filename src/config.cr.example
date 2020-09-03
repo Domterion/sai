@@ -1,22 +1,10 @@
 module Sai
   class Config
     # Your mongo instance connection uri, this must have a db and collection named `sai`
-    @@mongodb = "MONGODB_URI"
+    MONGO      = "MONGO URI"
     # How long notes should be allowed to be
-    @@note_limit = 256
+    NOTE_LIMIT =  256
     # The port the server will run on
-    @@port = 3000
-
-    def self.mongodb
-      @@mongodb
-    end
-
-    def self.note_limit
-      @@note_limit
-    end
-
-    def self.port
-      @@port
-    end
+    PORT       = 3000
   end
 end

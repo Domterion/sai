@@ -50,8 +50,8 @@ module Sai
     begin
       notes = env.params.json["notes"].as(String?)
       if !notes.nil?
-        if notes.as(String).size > Sai::Config.note_limit
-          next {msg: "Invalid notes, these cant be over #{Sai::Config.note_limit} characters."}.to_json
+        if notes.as(String).size > Sai::Config::NOTE_LIMIT
+          next {msg: "Invalid notes, these cant be over #{Sai::Config::NOTE_LIMIT} characters."}.to_json
         end
       end
     rescue
@@ -77,5 +77,5 @@ module Sai
     {msg: "OK"}.to_json
   end
 
-  Kemal.run port: Sai::Config.port
+  Kemal.run port: Sai::Config::PORT
 end

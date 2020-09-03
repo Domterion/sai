@@ -5,7 +5,7 @@ require "mongo"
 module Sai
   class Database
     @@meetings = {} of Int64 => Sai::Meeting
-    @@client = Mongo::Client.new Sai::Config.mongodb
+    @@client = Mongo::Client.new Sai::Config::MONGO
     @@db : Mongo::Database = @@client["sai"]
     @@collection : Mongo::Collection = @@db["sai"]
 
