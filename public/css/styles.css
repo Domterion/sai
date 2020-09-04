@@ -38,9 +38,25 @@ nav a:hover, nav a:active, nav a:visited {
   border-radius: 4px;
 }
 
-.meetings {
+#id {
+  font-weight: bolder;
+  color: #5FB641;
+}
+
+#passcode {
+  font-weight: bolder;
+  color: #FB8501;
+}
+
+#notes {
+  font-weight: bolder;
+  color: #FFB605;
+}
+
+.content {
   margin-bottom: 5px;
 }
+
 .meetings .card {
   background-color: #353535;
   margin-bottom: 4px;
@@ -53,15 +69,46 @@ nav a:hover, nav a:active, nav a:visited {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.meetings .card #id {
-  font-weight: bolder;
+
+#add .meetingId input {
+  border: 2px solid #5FB641;
+  background-color: #353535;
+  color: white;
+}
+#add .meetingId input:hover, #add .meetingId input:active, #add .meetingId input:focus {
+  box-shadow: none;
+}
+#add .meetingId small {
   color: #5FB641;
 }
-.meetings .card #passcode {
-  font-weight: bolder;
+#add .meetingPasscode input {
+  border: 2px solid #FFB605;
+  background-color: #353535;
+  color: white;
+}
+#add .meetingPasscode input:hover, #add .meetingPasscode input:active, #add .meetingPasscode input:focus {
+  box-shadow: none;
+}
+#add .meetingPasscode small {
   color: #FFB605;
 }
-.meetings .card #notes {
-  font-weight: bolder;
+#add .meetingNotes input {
+  border: 2px solid #FB8501;
+  background-color: #353535;
+  color: white;
+}
+#add .meetingNotes input:hover, #add .meetingNotes input:active, #add .meetingNotes input:focus {
+  box-shadow: none;
+}
+#add .meetingNotes small {
   color: #FB8501;
+}
+#add .btn {
+  background-color: #353535;
+  color: white;
+  border: none;
+}
+#add .btn:hover, #add .btn:active, #add .btn:focus {
+  box-shadow: none;
+  background-color: #1b1b1b;
 }

@@ -1,0 +1,41 @@
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="display-3">Sai | Add</h1>
+                <span class="lead">You can add your meeting via the form below.</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container content">
+    <div id="errors"></div>
+    <form id="add">
+        <div class="form-group meetingId">
+            <label for="meetingId">Meeting ID</label>
+            <input type="number" name="id" class="form-control" id="meetingId" min="0" max="100000000000"
+                aria-describedby="
+                meetingIdHelp" aria-required="true">
+            <small id="meetingIdHelp" class="form-text">The meeting ID.</small>
+        </div>
+        <div class="form-group meetingPasscode">
+            <label for="meetingPasscode">Passcode</label>
+            <input type="text" name="passcode" class="form-control" value="" id="meetingPasscode"
+                aria-describedby="meetingPasscode" aria-required="false">
+            <small id="meetingPasscode" class="form-text">The meeting passcode, this cant be longer than 16
+                characters.</small>
+        </div>
+        <div class="form-group meetingNotes">
+            <label for="meetingNotes">Notes</label>
+            <input type="text" name="notes" class="form-control" value="" id="meetingNotes"
+                aria-describedby="meetingNotes" aria-required="false">
+            <small id="meetingNotes" class="form-text">An optional field, this is used to describe the
+                meeting. This cant be longer than <%= Sai::Config::NOTE_LIMIT %> characters.</small>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+<script src="/js/index.js">
+</script>

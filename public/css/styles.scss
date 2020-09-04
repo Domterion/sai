@@ -2,6 +2,11 @@ $main: #1b1b1b;
 $accent: #353535;
 $text: white;
 
+$id: #5FB641;
+$passcode: #FFB605;
+$notes: #FB8501;
+
+
 html,
 body {
     height: 100vh;
@@ -51,8 +56,26 @@ nav {
     }
 }
 
-.meetings {
+#id {
+    font-weight: bolder;
+    color: $id;
+}
+
+#passcode {
+    font-weight: bolder;
+    color: $notes;
+}
+
+#notes {
+    font-weight: bolder;
+    color: $passcode;
+}
+
+.content {
     margin-bottom: 5px;
+}
+
+.meetings {
 
     .card {
         background-color: $accent;
@@ -68,20 +91,76 @@ nav {
             margin-top: .5rem;
             margin-bottom: .5rem;
         }
+    }
+}
 
-        #id {
-            font-weight: bolder;
-            color: #5FB641;
+#add {
+    .meetingId {
+
+        input {
+            border: 2px solid $id;
+            background-color: $accent;
+            color: $text;
+
+            &:hover,
+            &:active,
+            &:focus {
+                box-shadow: none;
+            }
         }
 
-        #passcode {
-            font-weight: bolder;
-            color: #FFB605;
+        small {
+            color: $id;
+        }
+    }
+
+    .meetingPasscode {
+        input {
+            border: 2px solid $passcode;
+            background-color: $accent;
+            color: $text;
+
+            &:hover,
+            &:active,
+            &:focus {
+                box-shadow: none;
+            }
         }
 
-        #notes {
-            font-weight: bolder;
-            color: #FB8501;
+        small {
+            color: $passcode;
+        }
+
+    }
+
+    .meetingNotes {
+        input {
+            border: 2px solid $notes;
+            background-color: $accent;
+            color: $text;
+
+            &:hover,
+            &:active,
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        small {
+            color: $notes;
+        }
+    }
+
+    .btn {
+        background-color: $accent;
+        color: $text;
+        border: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            box-shadow: none;
+            background-color: $main;
         }
     }
 }

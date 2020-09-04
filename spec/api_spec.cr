@@ -34,19 +34,7 @@ describe Sai do
     pWaUM87uxLKDrYqf4Vqv9"}
 
     post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
-    response.body.should eq({msg: "Invalid notes, these cant be over 512 characters."}.to_json)
-  end
-
-  it "checks for notes error" do
-    body = {"id": 1, "passcode": "passcode", "notes": "Q3F1mcUjL5WFHzFKrvcGmk3Eged2GEIgkL1szQ5QgdEY825e8BJa7FBjayEtGDHUbAXDNvJXJsEhli52bNfSNukhDWETtcqSLDdT
-    7UeaiqrXUFWfwzvOoecKmShuT7VZjp3QpP1DhnsRmZ8xvGbRbB9p5BDFYENwAYd4zj4FZ2QYf2y4VEOW9HQ8bRwLolzjgAjiuH
-    aEDbUWSamoLe7rEwEg4i6exQNZl7qfwzEUSVV8SKHkdXkKYge8AhRXwzFcbJI8uMoX1VNmGMc0IFJbxZD3ZsNVN2svxYhlES48
-    FmDR9F2T8AzpxZYnNgdkqV8FWaGyQEqwOl4LjkVjWxC4dxyCRuYPsZf9Fqt1cdKMw9Iw8DBN3rIlWPlqu0nMhBmuYKhfE6jFEu
-    oeKGE8Avarl9rz8DNfGRaDAYxuNPPXnyHdpSttCLq9NyNA5QgDliNVydyHZDk1KE0lngusCHfTe0xKWY3viBdzW6VL27ZLrHoW
-    pWaUM87uxLKDrYqf4Vqv9"}
-
-    post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
-    response.body.should eq({msg: "Invalid notes, these cant be over 512 characters."}.to_json)
+    response.body.should eq({msg: "Invalid notes, these cant be over #{Sai::Config::NOTE_LIMIT} characters."}.to_json)
   end
 
   it "deletes a meeting" do
