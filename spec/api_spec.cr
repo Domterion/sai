@@ -3,26 +3,26 @@ require "./spec_helper"
 # To run do KEMAL_ENV=test crystal spec
 
 describe Sai do
-  it "checks to make sure json is returned" do
+  it "checks to make sure everything is okay" do
     body = {"id": 999_9999_9999, "passcode": "passcode", "notes": "notes"}
 
     post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
 
-    response.body.should eq(body.to_json)
+    response.status_code.should eq(200)
   end
 
   it "checks for id error" do
     body = {"id": 100_000_000_001, "passcode": "passcode", "notes": "notes"}
 
     post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
-    response.body.should eq({msg: "Invalid Meeting ID provided, it may already be in our database."}.to_json)
+    response.status_code.should eq(400)
   end
 
   it "checks for passcode error" do
     body = {"id": 1, "passcode": "this should fail for password length", "notes": "notes"}
 
     post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
-    response.body.should eq({msg: "Invalid passcode."}.to_json)
+    response.status_code.should eq(400)
   end
 
   it "checks for notes error" do
@@ -34,7 +34,7 @@ describe Sai do
     pWaUM87uxLKDrYqf4Vqv9"}
 
     post("/api/add", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
-    response.body.should eq({msg: "Invalid notes, these cant be over #{Sai::Config::NOTE_LIMIT} characters."}.to_json)
+    response.status_code.should eq(400)
   end
 
   it "deletes a meeting" do
@@ -42,6 +42,6 @@ describe Sai do
 
     delete("/api/delete", headers: HTTP::Headers{"Content-Type" => "application/json"}, body: body.to_json)
 
-    response.body.should eq({msg: "OK"}.to_json)
+    response.status_code.should eq(200)
   end
 end

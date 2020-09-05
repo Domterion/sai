@@ -20,7 +20,8 @@ module Sai
       if db
         begin
           meeting = Sai::Utils.clean(meeting)
-          @@collection.insert({"_id" => meeting.id, "passcode" => meeting.passcode, "notes" => meeting.notes})
+          puts meeting
+          @@collection.insert({"_id" => meeting.id, "passcode" => meeting.passcode, "notes" => meeting.notes, "created" => Time.utc.to_unix})
         rescue
           puts "[MONGO] Error when inserting meeting #{meeting}"
         end
