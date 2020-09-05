@@ -11,7 +11,7 @@ module Sai
 
     def initialize
       @@collection.find({"_id" => {"$gt" => 0}}).each do |doc|
-        meeting = Sai::Meeting.from_json({"id": doc["_id"].as(Int64), "passcode": doc["passcode"].as(String?), "notes": doc["notes"].as(String?)}.to_json)
+        meeting = Sai::Meeting.from_json({"id": doc["_id"].as(Int64), "passcode": doc["passcode"].as(String?), "notes": doc["notes"].as(String?), "created": doc["created"].as(Int64)}.to_json)
         add_meeting(meeting, false)
       end
     end
@@ -20,8 +20,7 @@ module Sai
       if db
         begin
           meeting = Sai::Utils.clean(meeting)
-          puts meeting
-          @@collection.insert({"_id" => meeting.id, "passcode" => meeting.passcode, "notes" => meeting.notes, "created" => Time.utc.to_unix})
+          @@collection.insert({"_id" => meeting.id, "passcode" => meeting.passcode, "notes" => meeting.notes, "created" => meeting.created})
         rescue
           puts "[MONGO] Error when inserting meeting #{meeting}"
         end

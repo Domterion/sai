@@ -6,6 +6,6 @@ module Sai
     property id : Int64
     property passcode : String | Nil
     property notes : String | Nil
-    property created : Int64 = Time.utc.to_unix
+    property created : Int64
   end
 end

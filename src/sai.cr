@@ -66,7 +66,7 @@ module Sai
       notes = nil
     end
 
-    meeting = Sai::Meeting.from_json({"id": id, "passcode": passcode, "notes": notes}.to_json)
+    meeting = Sai::Meeting.from_json({"id": id, "passcode": passcode, "notes": notes, "created": Time.utc.to_unix}.to_json)
 
     DATABASE.add_meeting meeting
 

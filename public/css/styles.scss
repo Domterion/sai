@@ -5,6 +5,7 @@ $text: white;
 $id: #5FB641;
 $passcode: #FFB605;
 $notes: #FB8501;
+$created: #e03a3e;
 
 
 html,
@@ -63,12 +64,17 @@ nav {
 
 #passcode {
     font-weight: bolder;
-    color: $notes;
+    color: $passcode;
 }
 
 #notes {
     font-weight: bolder;
-    color: $passcode;
+    color: $notes;
+}
+
+#created {
+    font-weight: bolder;
+    color: $created;
 }
 
 .content {

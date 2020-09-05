@@ -45,12 +45,17 @@ nav a:hover, nav a:active, nav a:visited {
 
 #passcode {
   font-weight: bolder;
-  color: #FB8501;
+  color: #FFB605;
 }
 
 #notes {
   font-weight: bolder;
-  color: #FFB605;
+  color: #FB8501;
+}
+
+#created {
+  font-weight: bolder;
+  color: #e03a3e;
 }
 
 .content {

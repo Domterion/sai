@@ -26,6 +26,7 @@
                         <%= v.passcode ? v.passcode : "No passcode" %></span>
                     <hr><strong>Notes:</strong>
                     <span id="notes"><%= v.notes ? v.notes : "No notes" %></span>
+                    <hr><strong>Created:</strong> <span id="created"><%= Time.unix(v.created) %></span>
                 </p>
             </div>
         </div>
