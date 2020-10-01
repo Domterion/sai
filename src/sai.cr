@@ -11,8 +11,6 @@ module Sai
       meeting.passcode = meeting.passcode ? HTML.escape(meeting.passcode.as(String)) : nil
       meeting.notes = meeting.notes ? HTML.escape(meeting.notes.as(String)) : nil
 
-      puts meeting
-
       meeting
     end
   end
